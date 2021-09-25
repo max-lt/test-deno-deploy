@@ -1,10 +1,6 @@
-// @ts-nocheck
+// Import stylesheets
+import './style.css';
 
-addEventListener('fetch', (event) => {
-  event.respondWith(
-    new Response('Hello deno!', {
-      status: 200,
-      headers: { 'content-type': 'text/plain' },
-    })
-  );
-});
+// Write TypeScript code!
+const appDiv: HTMLElement = document.getElementById('app');
+appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
