@@ -24,10 +24,6 @@ router.get('/book/:id', (context) => {
   }
 });
 
-router.all('*', (context) => {
-  context.response.status = 404;
-  context.response.body = 'Not found :(';
-});
 
 app.use(router.routes());
 
