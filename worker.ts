@@ -14,7 +14,7 @@ router.get('/', (context) => {
   context.response.body = 'Hello world!';
 });
 
-router.get('/book', (context) => {
+router.get('/books', (context) => {
   context.response.body = Array.from(books.values());
 });
 
