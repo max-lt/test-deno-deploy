@@ -12,7 +12,6 @@ async function handleRequest(request) {
   const { pathname } = new URL(request.url);
 
   return fetch('https://devcat.fr/' + pathname).then((response) => {
-    response.headers.set('x-debug-pathname', pathname);
-    return response;
+    return new Response(response.body, {...response, headers: { 'x-debug-pathname': pathname }});
   });
 }
