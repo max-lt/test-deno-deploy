@@ -11,9 +11,8 @@ addEventListener('fetch', (event) => {
 async function handleRequest(request) {
   const { pathname } = new URL(request.url);
 
-  const headers = new Headers({
-    'x-debug-pathname': pathname,
+  return fetch('https://devcat.fr/' + pathname).then((response) => {
+    response.headers.set('x-debug-pathname', pathname);
+    return response;
   });
-
-  return fetch('https://devcat.fr/' + pathname, { headers });
 }
