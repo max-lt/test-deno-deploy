@@ -7,5 +7,11 @@ addEventListener("fetch", (event) => {
 });
 
 async function handleRequest(request) {
-  return new Response("Bonjour Clément!!!");
+  const twitterRequest = await fetch('https://twitter.com');
+  if(twitterRequest.status == 200) {
+  return new Response("Twitter is live");
+} else {
+  return new Response("Twitter is down");
+  // envoi d'un sms ...
+}
 }
