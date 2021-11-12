@@ -7,7 +7,7 @@ addEventListener("fetch", (event) => {
 });
 
 async function handleRequest(request) {
-  console.log(WorkerLocation);
+  console.log(Location);
   
   const location = 'abc';
 
