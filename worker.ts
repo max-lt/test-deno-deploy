@@ -6,10 +6,13 @@ addEventListener("fetch", (event) => {
   );
 });
 
-async function handleRequest(request) {  
-  console.log(postMessage);
-  
-  const response = 'abc';
+let data = null;
 
-  return new Response(response, { status: 200 });
+self.addEventListener('message', (event) => {
+    console.log('event', event);
+    data = event.data;
+})
+
+async function handleRequest(request) {
+  return new Response(JSON.stringify(data), { status: 200 });
 }
