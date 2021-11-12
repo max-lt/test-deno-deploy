@@ -7,7 +7,7 @@ addEventListener("fetch", (event) => {
 });
 
 async function handleRequest(request) {
-  console.log(webgpu);
+  alert('Hello');
   
   const location = 'abc';
 
