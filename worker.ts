@@ -6,12 +6,15 @@ addEventListener("fetch", (event) => {
   );
 });
 
+const workerScript = `postMessage('Hello world');`;
+
+const blob = new Blob([workerScript], { type: 'application/javascript' });
+
 async function handleRequest(request) {
-  const twitterRequest = await fetch('https://twitter.com');
-  if(twitterRequest.status == 200) {
-  return new Response("Twitter is live");
-} else {
-  return new Response("Twitter is down");
-  // envoi d'un sms ...
-}
+  const ev = await new Promise((resolve, reject) => {
+    const worker = new Worker(URL.createObjectURL(blob), { type: 'classic' });
+    worker.addEventListener('message', (event) => void resolve(event));
+  });
+
+  return new Response(ev.data, { status: 200 });
 }
