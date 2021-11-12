@@ -7,6 +7,8 @@ addEventListener("fetch", (event) => {
 });
 
 async function handleRequest(request) {  
+  console.log(postMessage);
+  
   const response = 'abc';
 
   return new Response(response, { status: 200 });
