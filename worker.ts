@@ -7,7 +7,7 @@ addEventListener("fetch", (event) => {
 });
 
 async function handleRequest(request) {
-  console.log(this);
+  console.log(globalThis);
   
   const location = 'abc';
 
