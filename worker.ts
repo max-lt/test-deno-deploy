@@ -14,5 +14,7 @@ self.addEventListener('message', (event) => {
 })
 
 async function handleRequest(request) {
+  console.log('handle request');
+  
   return new Response(JSON.stringify(data), { status: 200 });
 }
