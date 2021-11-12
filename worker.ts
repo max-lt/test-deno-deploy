@@ -7,7 +7,9 @@ addEventListener("fetch", (event) => {
 });
 
 async function handleRequest(request) {
-  const location = self.location.href;
+  Deno.core.print('test');
+  
+  const location = 'abc';
 
   return new Response('loc:' + location, { status: 200 });
 }
