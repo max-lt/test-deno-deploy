@@ -7,7 +7,7 @@ addEventListener("fetch", (event) => {
 });
 
 async function handleRequest(request) {
-  Deno.core.print('test');
+  console.log(Deno);
   
   const location = 'abc';
 
