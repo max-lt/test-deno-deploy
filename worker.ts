@@ -6,10 +6,8 @@ addEventListener("fetch", (event) => {
   );
 });
 
-async function handleRequest(request) {
-  alert('Hello');
-  
-  const location = 'abc';
+async function handleRequest(request) {  
+  const response = 'abc';
 
-  return new Response('loc:' + location, { status: 200 });
+  return new Response(response, { status: 200 });
 }
