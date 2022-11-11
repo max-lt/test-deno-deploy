@@ -1,5 +1,2 @@
-# typescript-7jv1br
+[Deployed with deno ⚡️](https://max-lt-test-deno-deploy.deno.dev/)
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/typescript-7jv1br)
-
-[Deployed with deno ⚡️](https://important-bat.deno.dev/)
